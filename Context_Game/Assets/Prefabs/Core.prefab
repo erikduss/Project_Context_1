@@ -1262,6 +1262,7 @@ MonoBehaviour:
   codeInputPanel: {fileID: 3363202543202576238}
   codeInputText: {fileID: 3363202542928550860}
   resultLabel: {fileID: 3363202542779297156}
+  titleLabel: {fileID: 3363202542755523650}
 --- !u!1 &3363202543556677680
 GameObject:
   m_ObjectHideFlags: 0

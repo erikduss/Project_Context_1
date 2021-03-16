@@ -34,9 +34,13 @@ public class PlayerController : MonoBehaviour
 
             if (hit.transform != null)
             {
-                if (hit.transform.gameObject.name == "Teleporter_Prefab")
+                if (hit.transform.gameObject.tag == "Teleporter")
                 {
                     pickup = hit.transform.gameObject.GetComponent<TeleporterController>();
+                }
+                else if(hit.transform.gameObject.tag == "EndMachine")
+                {
+                    pickup = hit.transform.gameObject.GetComponent<EndGameMachineController>();
                 }
                 else
                 {

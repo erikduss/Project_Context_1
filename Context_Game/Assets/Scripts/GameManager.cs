@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private InputField codeInputText;
     [SerializeField] private Text resultLabel;
+    [SerializeField] private Text titleLabel;
 
     private TeleporterController currentTeleporter;
+    private EndGameMachineController currentMachine;
 
     Regex rgx = new Regex("[^0-9]");
 
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void ConfirmCodeInput()
     {
-        bool result;
+        bool result = false;
 
         if (codeInputText.text.Length < 3)
         {
@@ -45,13 +47,41 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            result = currentTeleporter.AttemptActivationCode(int.Parse(codeInputText.text));
+            if(currentTeleporter != null)
+            {
+                result = currentTeleporter.AttemptActivationCode(int.Parse(codeInputText.text));
+            }
+            else if(currentMachine != null)
+            {
+                result = currentMachine.AttemptActivationCode(int.Parse(codeInputText.text));
+            }
         }
+
+        Debug.Log(result);
 
         if (result)
         {
             resultLabel.color = Color.green;
-            resultLabel.text = "Correct code, teleporter unlocked.";
+            if (currentTeleporter != null)
+            {
+                resultLabel.text = "Correct code, teleporter unlocked.";
+            }
+            else if (currentMachine != null)
+            {
+                if(currentMachine.codesLeft > 1)
+                {
+                    resultLabel.text = "Correct code, " + currentMachine.codesLeft + " codes left to activate the machine.";
+                }
+                else if(currentMachine.codesLeft == 0)
+                {
+                    resultLabel.text = "Correct code, you can activate the machine now.";
+                }
+                else
+                {
+                    resultLabel.text = "Correct code, " + currentMachine.codesLeft + " code left to activate the machine.";
+                }
+            }
+            
             StartCoroutine(FadeTextToZeroAlpha(3, resultLabel, result));
         }
         else
@@ -62,9 +92,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OpenCodeInputPanel(TeleporterController teleporter)
+    public void EndGame()
     {
-        currentTeleporter = teleporter;
+        Debug.Log("Game end");
+        Application.Quit();
+    }
+
+    public void OpenCodeInputPanel(TeleporterController teleporter, EndGameMachineController machine)
+    {
+        if(teleporter != null)
+        {
+            titleLabel.text = "Enter the code to activate the teleporter.";
+            currentTeleporter = teleporter;
+            machine = null;
+        }
+        else if(machine != null)
+        {
+            titleLabel.text = "Enter the codes to activate the machine.";
+            currentMachine = machine;
+            currentTeleporter = null;
+        }
+
         codeInputPanel.SetActive(true);
         playerScript.canMove = false;
     }

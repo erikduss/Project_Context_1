@@ -39,9 +39,6 @@ public class TeleporterController : MonoBehaviour, Iinteractable
                     case 2:
                         if (input == Codes.Player1_ActivationCode_2) return true;
                         break;
-                    case 3:
-                        if (input == Codes.Player1_ActivationCode_3) return true;
-                        break;
                     default:
                         return false;
                 }
@@ -54,9 +51,6 @@ public class TeleporterController : MonoBehaviour, Iinteractable
                         break;
                     case 2:
                         if (input == Codes.Player2_ActivationCode_2) return true;
-                        break;
-                    case 3:
-                        if (input == Codes.Player2_ActivationCode_3) return true;
                         break;
                     default:
                         return false;
@@ -71,9 +65,6 @@ public class TeleporterController : MonoBehaviour, Iinteractable
                     case 2:
                         if (input == Codes.Player2_ActivationCode_2) return true;
                         break;
-                    case 3:
-                        if (input == Codes.Player2_ActivationCode_3) return true;
-                        break;
                     default:
                         return false;
                 }
@@ -86,9 +77,6 @@ public class TeleporterController : MonoBehaviour, Iinteractable
                         break;
                     case 2:
                         if (input == Codes.Player3_ActivationCode_2) return true;
-                        break;
-                    case 3:
-                        if (input == Codes.Player3_ActivationCode_3) return true;
                         break;
                     default:
                         return false;
@@ -104,7 +92,6 @@ public class TeleporterController : MonoBehaviour, Iinteractable
     {
         if (IsActivated)
         {
-            Debug.Log("Teleport!");
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
             if (player != null)
@@ -114,7 +101,7 @@ public class TeleporterController : MonoBehaviour, Iinteractable
         }
         else
         {
-            gameManager.OpenCodeInputPanel(this);
+            gameManager.OpenCodeInputPanel(this, null);
         }
     }
 }

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public static class Codes
 {
+    public static List<int> FinalActivationCodes = new List<int>()
+    {
+        123,
+        456,
+        789,
+        000
+    };
+
     //the first 4 teleporter activation codes (the activation of the teleporters in the starting rooms)
     public static int Player1_ActivationCode_1 = 111;
     public static int Player2_ActivationCode_1 = 222;
@@ -15,10 +23,4 @@ public static class Codes
     public static int Player2_ActivationCode_2 = 666;
     public static int Player3_ActivationCode_2 = 777;
     public static int Player4_ActivationCode_2 = 888;
-
-    //the last 4 activation codes (the activation of the last device)
-    public static int Player1_ActivationCode_3 = 123;
-    public static int Player2_ActivationCode_3 = 456;
-    public static int Player3_ActivationCode_3 = 789;
-    public static int Player4_ActivationCode_3 = 000;
 }
