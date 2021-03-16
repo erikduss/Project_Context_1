@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
-    bool canChangeDestination = true; //The player can only change direction if they are not pathfinding towards a pickup (maybe change this?)
+    private bool canChangeDestination = true; //The player can only change direction if they are not pathfinding towards a pickup (maybe change this?)
+    public bool canMove = true;
 
     //Iinteractable is an interface. It calls the function Interact() on either a pickup or a teleporter at the moment. So any object that can be interacted with.
     Iinteractable currentInteractable; //The last interactable object the player clicked on.
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canChangeDestination)
+        if (Input.GetMouseButtonDown(0) && canChangeDestination && canMove)
         {
             RaycastHit hit;
 
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //TODO: Fix: If the player clicks on the pickup/teleporter when standing still the distance does not get checked correctly.
-        if (!canChangeDestination && agent.speed > 0 && agent.remainingDistance < 0.1f)
+        if (!canChangeDestination && agent.speed > 0 && agent.remainingDistance < 0.1f && canMove)
         {
             canChangeDestination = true;
             currentInteractable.Interact();
