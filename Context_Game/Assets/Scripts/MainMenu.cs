@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
 	}
 	public void ToMenu()
 	{
+		print("working");
 		SceneManager.LoadScene(0);
 	}
 }
