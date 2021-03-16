@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    [HideInInspector] public NavMeshAgent agent;
 
     private bool canChangeDestination = true; //The player can only change direction if they are not pathfinding towards a pickup (maybe change this?)
-    public bool canMove = true;
+    [HideInInspector] public bool canMove = true;
 
     //Iinteractable is an interface. It calls the function Interact() on either a pickup or a teleporter at the moment. So any object that can be interacted with.
     Iinteractable currentInteractable; //The last interactable object the player clicked on.
@@ -32,19 +32,22 @@ public class PlayerController : MonoBehaviour
 
             Iinteractable pickup;
 
-            if (hit.transform.gameObject.name == "Teleporter_Prefab")
+            if (hit.transform != null)
             {
-                pickup = hit.transform.gameObject.GetComponent<TeleporterController>();
-            }
-            else
-            {
-                pickup = hit.transform.gameObject.GetComponent<Pickup>();
-            }
+                if (hit.transform.gameObject.name == "Teleporter_Prefab")
+                {
+                    pickup = hit.transform.gameObject.GetComponent<TeleporterController>();
+                }
+                else
+                {
+                    pickup = hit.transform.gameObject.GetComponent<Pickup>();
+                }
 
-            if (pickup != null)
-            {
-                currentInteractable = pickup;
-                canChangeDestination = false;
+                if (pickup != null)
+                {
+                    currentInteractable = pickup;
+                    canChangeDestination = false;
+                }
             }
         }
 
