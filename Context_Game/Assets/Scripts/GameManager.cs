@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text resultLabel;
     [SerializeField] private Text titleLabel;
 
+    [SerializeField] private GameObject paperPickupPanel;
+
     private TeleporterController currentTeleporter;
     private EndGameMachineController currentMachine;
 
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         codeInputPanel.SetActive(false);
+        paperPickupPanel.SetActive(false);
         playerScript = player.GetComponent<PlayerController>();
         codeInputText.characterLimit = 3;
     }
@@ -34,6 +37,23 @@ public class GameManager : MonoBehaviour
         if (codeInputPanel.activeInHierarchy)
         {
             codeInputText.text = rgx.Replace(codeInputText.text, "");
+        }
+    }
+
+    public void TogglePaperPanel(bool needsToBeOn)
+    {
+        if(paperPickupPanel != null)
+        {
+            if (!paperPickupPanel.activeInHierarchy && needsToBeOn)
+            {
+                paperPickupPanel.SetActive(true);
+                playerScript.canMove = false;
+            }
+            else if(paperPickupPanel.activeInHierarchy && !needsToBeOn)
+            {
+                paperPickupPanel.SetActive(false);
+                playerScript.canMove = true;
+            }
         }
     }
 
@@ -56,8 +76,6 @@ public class GameManager : MonoBehaviour
                 result = currentMachine.AttemptActivationCode(int.Parse(codeInputText.text));
             }
         }
-
-        Debug.Log(result);
 
         if (result)
         {
@@ -125,10 +143,13 @@ public class GameManager : MonoBehaviour
     }
 
     //Simple teleporting of the player, for example to a new area.
-    public void TeleportPlayer(Vector3 teleportLocation)
+    public void TeleportPlayer(Vector3 teleportLocation, Vector3 cameraPosition)
     {
-        player.transform.position = teleportLocation;
+        playerScript.agent.Warp(teleportLocation);
+        //player.transform.position = teleportLocation;
         playerScript.agent.SetDestination(teleportLocation);
+        Camera mainCam = Camera.main;
+        mainCam.transform.position = cameraPosition;
     }
 
     public IEnumerator FadeTextToZeroAlpha(float time, Text textElement, bool inputResult)

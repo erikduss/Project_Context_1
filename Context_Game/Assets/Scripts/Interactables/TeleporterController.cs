@@ -8,6 +8,7 @@ public class TeleporterController : MonoBehaviour, Iinteractable
     [SerializeField] private int teleporterFromPlayer;
     [SerializeField] private int teleporterID;
     [SerializeField] private Vector3 teleportLocation = Vector3.zero;
+    [SerializeField] private Vector3 cameraTPLocation = Vector3.zero;
     public bool IsActivated { get; private set; } = false;
 
     void Start()
@@ -96,7 +97,7 @@ public class TeleporterController : MonoBehaviour, Iinteractable
 
             if (player != null)
             {
-                gameManager.TeleportPlayer(teleportLocation);
+                gameManager.TeleportPlayer(teleportLocation, cameraTPLocation);
             }
         }
         else
