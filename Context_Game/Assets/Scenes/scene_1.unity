@@ -1120,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 256822959476070489, guid: fc96a8ae9c73fbf478ec2c3769cb413e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.63
+      objectReference: {fileID: 0}
     - target: {fileID: 287069640829285839, guid: fc96a8ae9c73fbf478ec2c3769cb413e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -3755,6 +3759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3363202543020787649, guid: e6c3b8452a1cf1541800534377ea2abd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3363202543020787655, guid: e6c3b8452a1cf1541800534377ea2abd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.95
@@ -4116,7 +4124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483667975555218074, guid: 237f1d33423503842b72846ac995b184, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.33
+      value: 6.15
       objectReference: {fileID: 0}
     - target: {fileID: 3483667975555218074, guid: 237f1d33423503842b72846ac995b184, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4174,7 +4182,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter_Prefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3483667975555218077, guid: 237f1d33423503842b72846ac995b184, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 237f1d33423503842b72846ac995b184, type: 3}
 --- !u!1 &2052230347
 GameObject:
