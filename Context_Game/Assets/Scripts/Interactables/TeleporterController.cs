@@ -11,6 +11,8 @@ public class TeleporterController : MonoBehaviour, Iinteractable
     [SerializeField] private Vector3 cameraTPLocation = Vector3.zero;
     public bool IsActivated { get; private set; } = false;
 
+    [SerializeField] private bool needsActivationCode = true;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
@@ -91,7 +93,7 @@ public class TeleporterController : MonoBehaviour, Iinteractable
 
     public void Interact()
     {
-        if (IsActivated)
+        if (IsActivated || !needsActivationCode)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
