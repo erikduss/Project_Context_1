@@ -997,6 +997,7 @@ GameObject:
   - component: {fileID: 3363202543020787653}
   - component: {fileID: 3363202543020787642}
   - component: {fileID: 3363202543020787652}
+  - component: {fileID: 5093112328487023008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1126,6 +1127,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   canMove: 1
+--- !u!95 &5093112328487023008
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363202543020787651}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 45d480461bbdc704587e117329ce8e69, type: 3}
+  m_Controller: {fileID: 9100000, guid: c092dfacff60b474ebc3cd25d28ce6ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3363202543202576238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1459,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c092dfacff60b474ebc3cd25d28ce6ef, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95879256730774250, guid: 1e8e1924bb442334c9125455634bb567, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1e8e1924bb442334c9125455634bb567, type: 3}
 --- !u!4 &5400506087594178798 stripped
 Transform:
