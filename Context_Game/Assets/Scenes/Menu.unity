@@ -539,5 +539,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2167414682956660300, guid: 57ba3eba6f62d8d4cbdf11ee546eb9d5, type: 3}
+      propertyPath: m_Name
+      value: Panal UI
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ba3eba6f62d8d4cbdf11ee546eb9d5, type: 3}
