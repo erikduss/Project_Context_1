@@ -14,10 +14,7 @@ public class PostCredit : MonoBehaviour
 	}
 	IEnumerator WaitForAnimation()
 	{
-		Debug.Log("1");
 		yield return new WaitForSeconds(animatieTime);
-		SceneManager.LoadScene(1);
-		Debug.Log("2");
-		
+		SceneManager.LoadScene(1);	
 	}
 }
