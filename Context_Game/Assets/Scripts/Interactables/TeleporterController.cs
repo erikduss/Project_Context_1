@@ -61,10 +61,10 @@ public class TeleporterController : MonoBehaviour, Iinteractable
                 switch (teleporterID)
                 {
                     case 1:
-                        if (input == Codes.Player2_ActivationCode_1) return true;
+                        if (input == Codes.Player3_ActivationCode_1) return true;
                         break;
                     case 2:
-                        if (input == Codes.Player2_ActivationCode_2) return true;
+                        if (input == Codes.Player3_ActivationCode_2) return true;
                         break;
                     default:
                         return false;
@@ -74,10 +74,10 @@ public class TeleporterController : MonoBehaviour, Iinteractable
                 switch (teleporterID)
                 {
                     case 1:
-                        if (input == Codes.Player3_ActivationCode_1) return true;
+                        if (input == Codes.Player4_ActivationCode_1) return true;
                         break;
                     case 2:
-                        if (input == Codes.Player3_ActivationCode_2) return true;
+                        if (input == Codes.Player4_ActivationCode_2) return true;
                         break;
                     default:
                         return false;

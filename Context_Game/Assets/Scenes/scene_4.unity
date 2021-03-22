@@ -3108,7 +3108,7 @@ BoxCollider:
   m_GameObject: {fileID: 496493789}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.24880607, y: 0.2, z: 0.3959995}
   m_Center: {x: -0.0000019073486, y: -1.2274755e-10, z: 0.0000009536743}
@@ -4167,6 +4167,10 @@ PrefabInstance:
     - target: {fileID: 3483667975555218075, guid: 237f1d33423503842b72846ac995b184, type: 3}
       propertyPath: teleportLocation.z
       value: 36.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483667975555218075, guid: 237f1d33423503842b72846ac995b184, type: 3}
+      propertyPath: teleporterFromPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3483667975555218078, guid: 237f1d33423503842b72846ac995b184, type: 3}
       propertyPath: m_Name
