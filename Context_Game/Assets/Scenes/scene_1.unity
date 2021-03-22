@@ -447,7 +447,7 @@ RectTransform:
   - {fileID: 28789777}
   - {fileID: 562871974}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2182,7 +2182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193169086498429414, guid: fc96a8ae9c73fbf478ec2c3769cb413e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.16
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 5193169086498429414, guid: fc96a8ae9c73fbf478ec2c3769cb413e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2190,7 +2190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193169086498429414, guid: fc96a8ae9c73fbf478ec2c3769cb413e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.48
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 5197029445751017876, guid: fc96a8ae9c73fbf478ec2c3769cb413e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3320,7 +3320,7 @@ Transform:
   m_Children:
   - {fileID: 469305396}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &980311862 stripped
 GameObject:
