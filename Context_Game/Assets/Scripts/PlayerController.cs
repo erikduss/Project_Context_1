@@ -13,14 +13,27 @@ public class PlayerController : MonoBehaviour
     //Iinteractable is an interface. It calls the function Interact() on either a pickup or a teleporter at the moment. So any object that can be interacted with.
     Iinteractable currentInteractable; //The last interactable object the player clicked on.
 
+    private Animator anim;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.destination = agent.transform.position;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        //Agent's Magniture is movement. If the agent is moving, play a walk animation. Otherwise, idle
+        if(agent.velocity.magnitude > 0)
+        {
+            anim.SetFloat("Blend", 1); //Walking
+        }
+        else
+        {
+            anim.SetFloat("Blend", 0); //Idle
+        }
+
         if (Input.GetMouseButtonDown(0) && canChangeDestination && canMove)
         {
             RaycastHit hit;
