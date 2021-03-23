@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGameMachineController : MonoBehaviour, Iinteractable
 {
@@ -49,7 +50,8 @@ public class EndGameMachineController : MonoBehaviour, Iinteractable
     {
         if (IsActivated)
         {
-           gameManager.EndGame();
+            //gameManager.EndGame();
+            SceneManager.LoadScene(6);
         }
         else
         {
