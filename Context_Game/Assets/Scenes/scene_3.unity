@@ -834,8 +834,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 670096491}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TogglePaperPanel
-        m_Mode: 6
+        m_MethodName: ClosePaperPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3515,7 +3515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc963072874992849923be8d09a9926b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupName: Paper_Player_1_Room_1
+  pickupNumberInScene: 0
   itemKind: 3
 --- !u!1 &562871973
 GameObject:
@@ -4004,7 +4004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc963072874992849923be8d09a9926b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupName: Paper_Player_1_Room_1
+  pickupNumberInScene: 1
   itemKind: 3
 --- !u!135 &1094161285
 SphereCollider:
@@ -4293,10 +4293,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 670096491}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TogglePaperPanel
-        m_Mode: 6
+        m_MethodName: ClosePaperPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4785,6 +4785,10 @@ PrefabInstance:
       propertyPath: paperPickupPanel
       value: 
       objectReference: {fileID: 1150543650}
+    - target: {fileID: 3363202543263317209, guid: e6c3b8452a1cf1541800534377ea2abd, type: 3}
+      propertyPath: finalPaperPickupPanel
+      value: 
+      objectReference: {fileID: 1739639638}
     - target: {fileID: 3363202543564552260, guid: e6c3b8452a1cf1541800534377ea2abd, type: 3}
       propertyPath: m_Name
       value: Core

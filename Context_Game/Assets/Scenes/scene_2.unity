@@ -839,8 +839,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 670096491}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TogglePaperPanel
-        m_Mode: 6
+        m_MethodName: ClosePaperPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3743,7 +3743,7 @@ BoxCollider:
   m_GameObject: {fileID: 496493789}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.24880607, y: 0.2, z: 0.3959995}
   m_Center: {x: -0.0000019073486, y: -1.2274755e-10, z: 0.0000009536743}
@@ -3772,7 +3772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc963072874992849923be8d09a9926b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupName: Paper_Player_1_Room_1
+  pickupNumberInScene: 0
   itemKind: 3
 --- !u!4 &545240467 stripped
 Transform:
@@ -3997,8 +3997,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 670096491}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TogglePaperPanel
-        m_Mode: 6
+        m_MethodName: ClosePaperPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4943,6 +4943,10 @@ PrefabInstance:
       propertyPath: paperPickupPanel
       value: 
       objectReference: {fileID: 1150543650}
+    - target: {fileID: 3363202543263317209, guid: e6c3b8452a1cf1541800534377ea2abd, type: 3}
+      propertyPath: finalPaperPickupPanel
+      value: 
+      objectReference: {fileID: 371881345}
     - target: {fileID: 3363202543564552260, guid: e6c3b8452a1cf1541800534377ea2abd, type: 3}
       propertyPath: m_Name
       value: Core
@@ -5436,7 +5440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc963072874992849923be8d09a9926b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupName: Paper_Player_1_Room_1
+  pickupNumberInScene: 1
   itemKind: 3
 --- !u!135 &1789629815
 SphereCollider:
@@ -5460,7 +5464,7 @@ BoxCollider:
   m_GameObject: {fileID: 1789629813}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.24880607, y: 0.2, z: 0.3959995}
   m_Center: {x: -0.0000019073486, y: -1.2274755e-10, z: 0.0000009536743}

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text titleLabel;
 
     [SerializeField] private GameObject paperPickupPanel;
+    [SerializeField] private GameObject finalPaperPickupPanel;
 
     private TeleporterController currentTeleporter;
     private EndGameMachineController currentMachine;
@@ -40,18 +41,51 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TogglePaperPanel(bool needsToBeOn)
+    public void ClosePaperPanel()
     {
-        if(paperPickupPanel != null)
+        if (paperPickupPanel != null)
+        {
+            if (paperPickupPanel.activeInHierarchy)
+            {
+                paperPickupPanel.SetActive(false);
+                playerScript.canMove = true;
+            }
+        }
+        if (finalPaperPickupPanel)
+        {
+            if (finalPaperPickupPanel.activeInHierarchy)
+            {
+                finalPaperPickupPanel.SetActive(false);
+                playerScript.canMove = true;
+            }
+        }
+    }
+
+        public void TogglePaperPanel(bool needsToBeOn, bool final)
+    {
+        if (paperPickupPanel != null && !final)
         {
             if (!paperPickupPanel.activeInHierarchy && needsToBeOn)
             {
                 paperPickupPanel.SetActive(true);
                 playerScript.canMove = false;
             }
-            else if(paperPickupPanel.activeInHierarchy && !needsToBeOn)
+            else if (paperPickupPanel.activeInHierarchy && !needsToBeOn)
             {
                 paperPickupPanel.SetActive(false);
+                playerScript.canMove = true;
+            }
+        }
+        else if(finalPaperPickupPanel != null && final)
+        {
+            if (!finalPaperPickupPanel.activeInHierarchy && needsToBeOn)
+            {
+                finalPaperPickupPanel.SetActive(true);
+                playerScript.canMove = false;
+            }
+            else if (finalPaperPickupPanel.activeInHierarchy && !needsToBeOn)
+            {
+                finalPaperPickupPanel.SetActive(false);
                 playerScript.canMove = true;
             }
         }
