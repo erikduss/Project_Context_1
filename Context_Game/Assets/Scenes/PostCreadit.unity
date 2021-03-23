@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7086118f9be60de489e74870020c8e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatieTime: 21
+  animatieTime: 35
 --- !u!1 &253044148
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +352,8 @@ PlayableDirector:
   - key: {fileID: 6641550463766301412, guid: 37b6edaa45b3d1c4184d62e3c1a11f04, type: 2}
     value: {fileID: 0}
   - key: {fileID: -4766612480470459905, guid: 37b6edaa45b3d1c4184d62e3c1a11f04, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5011677227648427877, guid: 37b6edaa45b3d1c4184d62e3c1a11f04, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
